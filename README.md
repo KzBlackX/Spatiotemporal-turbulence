@@ -31,43 +31,6 @@
 恶魔或吸血鬼必须设定几个小、大 boss 基地：吸血鬼的基地可以是城堡，较分散；恶魔的基地只有一个，在魔法世界
 z 轴 40 以下固定位置生成。魔法世界海平面为 z 轴 80 以上，只能通过祭坛传送到恶魔所在的地狱。
 
-## 构建
-
-```bash
-# 编译并打包到 build/libs/
-./gradlew build          # Windows: gradlew.bat build
-
-# 启动开发客户端 / 服务端 / 数据生成
-./gradlew runClient
-./gradlew runServer
-./gradlew runData
-```
-
-首次构建会下载 NeoForge、Minecraft 并做反编译，耗时较长。产物位于 `build/libs/spatiotemporal_turbulence-<version>.jar`。
-
-## 目录结构
-
-```
-src/main/java/com/db/spatiotemporal_turbulence/   模组源码
-src/main/resources/                               资源（assets、数据包、mixin 配置等）
-src/main/templates/META-INF/neoforge.mods.toml    模组元数据模板，构建时展开变量
-```
-
-`neoforge.mods.toml` 里的 `${...}` 变量由 `gradle.properties` 提供，不要直接改展开后的产物。
-
-## 当前代码状态
-
-示例方块 `example_block`、示例物品 `example_item`、示例创造模式物品栏 `example_tab` 已全部移除，模组不再注册任何占位内容。
-
-注册结构按类型拆分在包 `com.db.spatiotemporal_turbulence.registry` 下：`ModBlocks`（方块）、`ModItems`（物品）、
-`ModRegistry`（统一注册入口，由模组构造器调用）。新增/追加方块应通过 `ModBlocks` 的辅助方法注册，
-该方法会同时登记对应的 `BlockItem`；新增物品使用 `ModItems`。
-
-黑洞吸入逻辑仍在 `BlackHoleHandler`；维度定义仍位于 `src/main/resources/data/spatiotemporal_turbulence/`
-（`dimension_type` 与 `dimension` 各一份 JSON）。
-
-黑洞出现延迟已改为可配置项（默认 10 秒），配置文件为 `spatiotemporal_turbulence-local.toml`。
-
 ## 许可证
 
 本项目采用 **GNU Lesser General Public License v3.0 或更高版本（LGPL-3.0-or-later）**。
