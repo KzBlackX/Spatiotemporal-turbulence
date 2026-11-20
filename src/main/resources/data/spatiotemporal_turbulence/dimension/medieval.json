@@ -2,7 +2,10 @@
   "type": "spatiotemporal_turbulence:medieval",
   "generator": {
     "type": "minecraft:noise",
-    "biome_source": { "type": "minecraft:multi_noise", "preset": "minecraft:overworld" },
-    "settings": "minecraft:overworld"
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "preset": "minecraft:overworld"
+    },
+    "settings": "spatiotemporal_turbulence:medieval"
   }
 }
