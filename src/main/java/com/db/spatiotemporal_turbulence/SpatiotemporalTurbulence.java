@@ -98,6 +98,10 @@ public class SpatiotemporalTurbulence {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        // 注册黑洞吸入逻辑：玩家进入主世界 10 秒后被吸入并传送到中世纪维度，登出时清理状态
+        NeoForge.EVENT_BUS.addListener(BlackHoleHandler::onPlayerTick);
+        NeoForge.EVENT_BUS.addListener(BlackHoleHandler::onPlayerLogout);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
