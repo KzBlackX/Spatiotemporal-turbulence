@@ -1,0 +1,7 @@
+{
+  "type": "spatiotemporal_turbulence:castle_city",
+  "biomes": "spatiotemporal_turbulence:medieval",
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin",
+  "spawn_overrides": {}
+}
