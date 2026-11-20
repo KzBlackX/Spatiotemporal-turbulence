@@ -18,8 +18,8 @@
       "left": {
         "type": "minecraft:gradient",
         "axis": "y",
-        "from_coordinate": 74,
-        "to_coordinate": 134,
+        "from_coordinate": 40,
+        "to_coordinate": 100,
         "from_value": 1.0,
         "to_value": -1.0
       },
@@ -38,6 +38,6 @@
     "temperature": "minecraft:overworld/temperature",
     "vegetation": "minecraft:overworld/vegetation"
   },
-  "sea_level": 96,
+  "sea_level": 63,
   "spawn_target": []
 }
