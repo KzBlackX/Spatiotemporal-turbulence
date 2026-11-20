@@ -10,7 +10,7 @@
 | Gradle | 9.2.1（ModDevGradle 2.0.148） |
 | modid | `spatiotemporal_turbulence` |
 | 包名 | `com.db.spatiotemporal_turbulence` |
-| 协议 | MIT |
+| 协议 | LGPL-3.0-or-later |
 
 ## 模组设定
 
@@ -60,3 +60,16 @@ src/main/templates/META-INF/neoforge.mods.toml    模组元数据模板，构建
 真正的传送机制、维度、多方块结构等内容。
 
 `spatiotemporal_turbulence` 是正式 modid，示例注册项也在该命名空间下，因此可以逐个替换而不用整体重写。
+
+## 许可证
+
+本项目采用 **GNU Lesser General Public License v3.0 或更高版本（LGPL-3.0-or-later）**。
+
+- 完整条款见 [LICENSE](LICENSE)（LGPL-3.0）。LGPL-3.0 通过引用并入 GPL-3.0 的条款，
+  因此同一份 [LICENSE.GPL-3.0](LICENSE.GPL-3.0) 也随仓库提供。
+- 简而言之：你可以把本模组放进整合包、在闭源模组里依赖它；但如果你**修改了本项目自身的代码并分发**，
+  修改后的这部分必须继续以 LGPL-3.0（或兼容许可）开源。
+- 第三方材料与依赖的许可说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+历史说明：本项目在提交 `bc23f11` 及之前以 MIT 协议发布。该版本代码的 MIT 授权对已经获取它的人继续有效，
+不可撤回；LGPL-3.0-or-later 适用于本提交之后的版本。
