@@ -57,14 +57,16 @@ src/main/templates/META-INF/neoforge.mods.toml    模组元数据模板，构建
 
 ## 当前代码状态
 
-`src/main` 目前是官方脚手架：示例方块 `example_block`、示例物品 `example_item`、创造模式物品栏 `example_tab`、
-示例配置 `Config`，以及客户端入口 `SpatiotemporalTurbulenceClient`。这些是占位代码，后续按上面的设定替换成
-真正的传送机制、维度等内容。
+示例方块 `example_block`、示例物品 `example_item`、示例创造模式物品栏 `example_tab` 已全部移除，模组不再注册任何占位内容。
 
-黑洞吸入逻辑在 `BlackHoleHandler`，维度定义在 `src/main/resources/data/spatiotemporal_turbulence/`
+注册结构按类型拆分在包 `com.db.spatiotemporal_turbulence.registry` 下：`ModBlocks`（方块）、`ModItems`（物品）、
+`ModRegistry`（统一注册入口，由模组构造器调用）。新增/追加方块应通过 `ModBlocks` 的辅助方法注册，
+该方法会同时登记对应的 `BlockItem`；新增物品使用 `ModItems`。
+
+黑洞吸入逻辑仍在 `BlackHoleHandler`；维度定义仍位于 `src/main/resources/data/spatiotemporal_turbulence/`
 （`dimension_type` 与 `dimension` 各一份 JSON）。
 
-`spatiotemporal_turbulence` 是正式 modid，示例注册项也在该命名空间下，因此可以逐个替换而不用整体重写。
+黑洞出现延迟已改为可配置项（默认 10 秒），配置文件为 `spatiotemporal_turbulence-local.toml`。
 
 ## 许可证
 

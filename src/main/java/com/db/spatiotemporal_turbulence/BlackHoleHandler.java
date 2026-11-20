@@ -44,7 +44,7 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 /**
  * 黑洞吸入机制。
- * <p>玩家在主世界停留 {@value #WARMUP_TICKS} tick（约 10 秒）后会被黑洞吸入，
+ * <p>玩家在主世界停留配置的等待时间（{@code warmupSeconds}，默认 10 秒）后会被黑洞吸入，
  * 吸入阶段持续 {@value #SUCTION_TICKS} tick，随后被传送到本模组的中世纪维度。
  * 状态全部保存在服务端静态容器中，按玩家 UUID 区分。</p>
  */
@@ -53,8 +53,8 @@ public final class BlackHoleHandler {
     public static final ResourceKey<Level> MEDIEVAL = ResourceKey.create(
             Registries.DIMENSION, Identifier.fromNamespaceAndPath(SpatiotemporalTurbulence.MODID, "medieval"));
 
-    // 触发前需要在主世界累计的 tick 数（200 tick = 10 秒）
-    private static final int WARMUP_TICKS = 200;
+    // 配置尚未加载时使用的默认等待时间（200 tick = 10 秒）
+    private static final int FALLBACK_WARMUP_TICKS = 200;
     // 吸入阶段持续的总 tick 数
     private static final int SUCTION_TICKS = 60;
     // 每 tick 向黑洞中心移动的剩余距离比例
@@ -72,6 +72,18 @@ public final class BlackHoleHandler {
     private static final Set<UUID> TELEPORTED = new HashSet<>();
 
     private BlackHoleHandler() {
+    }
+
+    /**
+     * 从配置读取触发前需要在主世界累计的 tick 数（秒数 × 20）。
+     * <p>配置项在服务端启动阶段才加载，读取失败时退回默认值，避免在事件里抛异常刷屏。</p>
+     */
+    private static int warmupTicks() {
+        try {
+            return Math.max(1, Config.WARMUP_SECONDS.getAsInt()) * 20;
+        } catch (IllegalStateException e) {
+            return FALLBACK_WARMUP_TICKS;
+        }
     }
 
     /**
@@ -103,7 +115,7 @@ public final class BlackHoleHandler {
         }
 
         int ticks = OVERWORLD_TICKS.getOrDefault(playerId, 0) + 1;
-        if (ticks < WARMUP_TICKS) {
+        if (ticks < warmupTicks()) {
             OVERWORLD_TICKS.put(playerId, ticks);
             return;
         }

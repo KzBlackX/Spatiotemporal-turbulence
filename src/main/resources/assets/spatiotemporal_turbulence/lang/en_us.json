@@ -1,13 +1,6 @@
 {
-  "itemGroup.spatiotemporal_turbulence": "Spatiotemporal Turbulence",
-  "block.spatiotemporal_turbulence.example_block": "Example Block",
-  "item.spatiotemporal_turbulence.example_item": "Example Item",
-
   "spatiotemporal_turbulence.configuration.title": "Spatiotemporal Turbulence Configs",
   "spatiotemporal_turbulence.configuration.section.spatiotemporal_turbulence.local.toml": "Spatiotemporal Turbulence Configs",
   "spatiotemporal_turbulence.configuration.section.spatiotemporal_turbulence.local.toml.title": "Spatiotemporal Turbulence Configs",
-  "spatiotemporal_turbulence.configuration.items": "Item List",
-  "spatiotemporal_turbulence.configuration.logDirtBlock": "Log Dirt Block",
-  "spatiotemporal_turbulence.configuration.magicNumberIntroduction": "Magic Number Text",
-  "spatiotemporal_turbulence.configuration.magicNumber": "Magic Number"
+  "spatiotemporal_turbulence.configuration.warmupSeconds": "Black Hole Delay (seconds)"
 }
