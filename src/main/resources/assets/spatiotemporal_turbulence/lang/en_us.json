@@ -2,5 +2,6 @@
   "spatiotemporal_turbulence.configuration.title": "Spatiotemporal Turbulence Configs",
   "spatiotemporal_turbulence.configuration.section.spatiotemporal_turbulence.local.toml": "Spatiotemporal Turbulence Configs",
   "spatiotemporal_turbulence.configuration.section.spatiotemporal_turbulence.local.toml.title": "Spatiotemporal Turbulence Configs",
-  "spatiotemporal_turbulence.configuration.warmupSeconds": "Black Hole Delay (seconds)"
+  "spatiotemporal_turbulence.configuration.warmupSeconds": "Black Hole Delay (seconds)",
+  "entity.spatiotemporal_turbulence.vampire": "Vampire"
 }

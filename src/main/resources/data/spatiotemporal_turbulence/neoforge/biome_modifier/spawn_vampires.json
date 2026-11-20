@@ -1,0 +1,15 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "spatiotemporal_turbulence:medieval",
+  "spawners": [
+    {
+      "type": "spatiotemporal_turbulence:vampire",
+      "count": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 3,
+        "min_inclusive": 1
+      },
+      "weight": 40
+    }
+  ]
+}

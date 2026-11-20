@@ -21,6 +21,8 @@ package com.db.spatiotemporal_turbulence.registry;
 import com.db.spatiotemporal_turbulence.SpatiotemporalTurbulence;
 import com.db.spatiotemporal_turbulence.worldgen.CastleCityPiece;
 import com.db.spatiotemporal_turbulence.worldgen.CastleCityStructure;
+import com.db.spatiotemporal_turbulence.worldgen.dungeon.DungeonPiece;
+import com.db.spatiotemporal_turbulence.worldgen.dungeon.DungeonStructure;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.structure.StructureType;
@@ -65,6 +67,18 @@ public final class ModStructures {
      */
     public static final DeferredHolder<StructurePieceType, StructurePieceType> CASTLE_CITY_PIECE =
             STRUCTURE_PIECE_TYPES.register("castle_city", () -> (context, tag) -> new CastleCityPiece(tag));
+
+    /**
+     * 「地下地牢」结构类型，注册名 {@code spatiotemporal_turbulence:dungeon}。
+     */
+    public static final DeferredHolder<StructureType<?>, StructureType<DungeonStructure>> DUNGEON =
+            STRUCTURE_TYPES.register("dungeon", () -> () -> DungeonStructure.CODEC);
+
+    /**
+     * 地牢片段的类型，用于存档序列化；反序列化时直接从 NBT 还原片段。
+     */
+    public static final DeferredHolder<StructurePieceType, StructurePieceType> DUNGEON_PIECE =
+            STRUCTURE_PIECE_TYPES.register("dungeon", () -> (context, tag) -> new DungeonPiece(tag));
 
     private ModStructures() {
     }

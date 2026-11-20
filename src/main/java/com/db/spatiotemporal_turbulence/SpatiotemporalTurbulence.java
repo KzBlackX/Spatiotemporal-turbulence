@@ -42,7 +42,7 @@ public class SpatiotemporalTurbulence {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public SpatiotemporalTurbulence(IEventBus modEventBus, ModContainer modContainer) {
-        // 注册方块、物品、结构等内容（新增注册表时只需改 ModRegistry）
+        // 注册方块、物品、结构、实体等内容（新增注册表时只需改 ModRegistry）
         ModRegistry.register(modEventBus);
 
         // 黑洞吸入逻辑：玩家进入主世界后经过配置的等待时间被吸入并传送到中世纪维度

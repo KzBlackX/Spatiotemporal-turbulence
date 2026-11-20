@@ -2,5 +2,6 @@
   "spatiotemporal_turbulence.configuration.title": "时空乱流 配置",
   "spatiotemporal_turbulence.configuration.section.spatiotemporal_turbulence.local.toml": "时空乱流 配置",
   "spatiotemporal_turbulence.configuration.section.spatiotemporal_turbulence.local.toml.title": "时空乱流 配置",
-  "spatiotemporal_turbulence.configuration.warmupSeconds": "黑洞出现延迟（秒）"
+  "spatiotemporal_turbulence.configuration.warmupSeconds": "黑洞出现延迟（秒）",
+  "entity.spatiotemporal_turbulence.vampire": "吸血鬼"
 }
